@@ -24,3 +24,4 @@ for project in projects:
 print(titles[1])
 print(skills[1])
 
+# OK
