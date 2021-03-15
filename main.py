@@ -2,9 +2,10 @@
 from bs4 import BeautifulSoup
 import requests
 import get_skills as gs
+import data_base as db
 
 # --- request to a website
-html_text = requests.get('https://ponisha.ir/search/projects/skill-%D8%B1%DB%8C%D8%A7%DA%A9%D8%AA-%D9%86%DB%8C%D8%AA%DB%8C%D9%88/currency-IRR/status-open/sort-newest').text
+html_text = requests.get('https://ponisha.ir/search/projects').text
 
 # --- instance soup
 soup = BeautifulSoup(html_text, 'lxml')
@@ -31,15 +32,25 @@ for skill in skills:
         temp1.append(temp2)
     temp.append(temp1)
 
-skills []
 skills = temp
 
 
-#
-# my_skills = gs.my_skills_list
-#
-# for index, skill in enumerate(skills):
-#     for i in my_skills:
-#         if i in skill:
-#             print(index)
-#             break
+# --- check based on my Skills
+my_skills = gs.my_skills_list
+indexes = []
+for index, skill in enumerate(skills):
+    for i in my_skills:
+        if i in skill:
+            indexes.append(index)
+            break
+
+# --- Push all this data if they are new in Database
+push_name = []
+push_skills = []
+push_links = []
+for i in indexes:
+    push_name.append(titles[i])
+    push_skills.append(skills[i])
+    push_links.append(links[i])
+
+db.push_data()

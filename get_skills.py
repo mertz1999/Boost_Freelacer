@@ -4,13 +4,15 @@ my_skills_list = [
     'Metatrader',
     'Python',
     'Matlab',
+    'Linux',
+    'IoT',
+    'Linux',
     'مهندسی برق',
     'الکترونیک',
     'ام ‌کیوال۴',
     'پردازش تصویر',
     'میکروکنترلر',
-    'Android',
-    'ری اکتیو نیتیو'
+    'iot'
 ]
 
 
