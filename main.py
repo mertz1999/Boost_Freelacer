@@ -46,11 +46,14 @@ for index, skill in enumerate(skills):
 
 # --- Push all this data if they are new in Database
 push_name = []
-push_skills = []
 push_links = []
 for i in indexes:
     push_name.append(titles[i])
-    push_skills.append(skills[i])
     push_links.append(links[i])
 
-db.push_data()
+push_id = []
+for link in push_links:
+    push_id.append(link[27:33])
+
+
+# db.push_data()
