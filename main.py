@@ -34,7 +34,6 @@ for skill in skills:
 
 skills = temp
 
-
 # --- check based on my Skills
 my_skills = gs.my_skills_list
 indexes = []
@@ -44,7 +43,7 @@ for index, skill in enumerate(skills):
             indexes.append(index)
             break
 
-# --- Push all this data if they are new in Database
+# --- make new links list, titles list and  id
 push_name = []
 push_links = []
 for i in indexes:
@@ -53,7 +52,8 @@ for i in indexes:
 
 push_id = []
 for link in push_links:
-    push_id.append(link[27:33])
+    push_id.append(int(link[27:33]))
 
-
-# db.push_data()
+# --- Push all this data if they are new in Database
+for index, id_l in enumerate(push_id):
+    db.write_data(id_l, push_name[index], push_links[index])
