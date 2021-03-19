@@ -1,6 +1,6 @@
 # Iranian Freelancer searchEngine(**Boost Freelacer**)!
 
-In this project i trying to scrap Freelancers websites in **IRAN** like **Ponisha,Parscoders** so with this project we can access to all project on this websites based on Skill list.
+In this project i trying to scrap Freelancers websites in **IRAN** like **Ponisha,Parscoders** so with this project we can access to all project on these websites based on Skill list.
 
 
 ## Why?
